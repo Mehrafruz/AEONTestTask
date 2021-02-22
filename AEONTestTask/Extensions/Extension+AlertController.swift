@@ -23,7 +23,7 @@ extension AlertDisplayer where Self: UIViewController {
         actions?.forEach { action in
             alertController.addAction(action)
         }
-        alertController.view.tintColor = ColorPalette.blue
+        alertController.view.tintColor = ColorPalette.green
         present(alertController, animated: true)
         
     }

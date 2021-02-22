@@ -31,15 +31,16 @@ protocol NetworkManagerDescription: AnyObject {
 final class NetworkManager: NetworkManagerDescription {
     static let shared: NetworkManagerDescription = NetworkManager()
     
+    let headers: HTTPHeaders = [
+    "app-key": "12345",
+    "v": "1"]
     
     func auth(email: String, pass: String, completion: @escaping (Result<User, Error>) -> Void) {
         let urlString = "http://82.202.204.94/api/login"
         let parameters = [
             "login": email,
             "password": pass]
-        let headers: HTTPHeaders = [
-            "app-key": "12345",
-            "v": "1"]
+        
         guard let url = URL(string: urlString) else {
             completion(.failure(NetworkError.invalidURL))
             return
@@ -71,11 +72,8 @@ final class NetworkManager: NetworkManagerDescription {
     
     
     func getPayments(token: String, completion: @escaping (Result<Payments, Error>) -> Void){
-        let urlString = "http://82.202.204.94/api/payments?token=123456789"
+        let urlString = "http://82.202.204.94/api/payments?token=\(token)"
         
-        let headers: HTTPHeaders = [
-            "app-key": "12345",
-            "v": "1"]
         guard let url = URL(string: urlString) else {
             completion(.failure(NetworkError.invalidURL))
             return

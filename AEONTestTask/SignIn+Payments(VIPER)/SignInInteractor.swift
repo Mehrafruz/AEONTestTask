@@ -25,7 +25,6 @@ extension SignInInteractor: SignInInteractorInput {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let user):
-                    print (user.response.token)
                     self?.output?.didLoadToken(token: user.response.token)
                 case .failure(let error):
                     self?.output?.didFail(with: error)
