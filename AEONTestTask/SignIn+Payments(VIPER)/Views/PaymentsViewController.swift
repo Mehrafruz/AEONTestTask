@@ -11,15 +11,17 @@ import UIKit
 class PaymentsViewController: UIViewController {
     var payments: Payments?
     private let tableView = UITableView()
-
+    private let goBackButton = UIButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         setup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: false)
-        
     }
     
     func setup(){
@@ -29,19 +31,46 @@ class PaymentsViewController: UIViewController {
         tableView.register(PaymentsTableViewCell.self, forCellReuseIdentifier: "PaymentsTableViewCell")
         tableView.frame = view.frame
         
-        [tableView].forEach{
+        setupLittleButton(button: goBackButton, image: UIImage(systemName: "arrow.left")!, tintColor: ColorPalette.green)
+        
+        goBackButton.addTarget(self, action: #selector(didClickedGoBackButton), for: .touchUpInside)
+        
+        [tableView, goBackButton].forEach{
             view.addSubview($0)
         }
         
-        tableView.translatesAutoresizingMaskIntoConstraints = false
+        [tableView, goBackButton].forEach{
+            ($0).translatesAutoresizingMaskIntoConstraints = false
+        }
         
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            goBackButton.widthAnchor.constraint(equalToConstant: 30),
+            goBackButton.heightAnchor.constraint(equalToConstant: 30),
+            goBackButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 20),
+            goBackButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20)
+        ])
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
             tableView.leftAnchor.constraint(equalTo: view.leftAnchor)
         ])
     }
+    
+    func setupLittleButton(button: UIButton, image: UIImage, tintColor: UIColor) {
+        let image = image
+        button.setBackgroundImage( image, for: UIControl.State.normal)
+        button.setTitleColor(UIColor.white, for: UIControl.State.normal)
+        button.tintColor = tintColor
+    }
+    
+    @objc
+    func didClickedGoBackButton() {
+        goBackButton.pulsate()
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 extension PaymentsViewController: UITableViewDelegate, UITableViewDataSource{
@@ -50,7 +79,7 @@ extension PaymentsViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 130
+        return 120
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

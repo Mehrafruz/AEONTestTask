@@ -20,13 +20,12 @@
 		EF38300425E1772900E080EC /* SignInContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF382FFE25E1772900E080EC /* SignInContainer.swift */; };
 		EF38300825E18C3600E080EC /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF38300725E18C3600E080EC /* ColorPalette.swift */; };
 		EF38300B25E19E8800E080EC /* POEVeticaVanta.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF38300A25E19D6700E080EC /* POEVeticaVanta.otf */; };
-		EF38300E25E1AB4000E080EC /* AlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF38300D25E1AB4000E080EC /* AlertControllerExtension.swift */; };
+		EF38300E25E1AB4000E080EC /* Extension+AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF38300D25E1AB4000E080EC /* Extension+AlertController.swift */; };
 		EF38301025E1B23500E080EC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF38300F25E1B23500E080EC /* NetworkManager.swift */; };
 		EF38301325E1B37C00E080EC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF38301225E1B37C00E080EC /* User.swift */; };
 		EF3A491025E16FBF00A1F160 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3A490F25E16FBF00A1F160 /* AppDelegate.swift */; };
 		EF3A491925E16FC200A1F160 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF3A491825E16FC200A1F160 /* Assets.xcassets */; };
 		EF3A491C25E16FC200A1F160 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF3A491A25E16FC200A1F160 /* LaunchScreen.storyboard */; };
-		EFEDC18825E3CA7B00B51A95 /* PaymentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEDC18725E3CA7B00B51A95 /* PaymentsTableViewController.swift */; };
 		EFEDC18A25E44DC400B51A95 /* Extension+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEDC18925E44DC400B51A95 /* Extension+UIButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +44,7 @@
 		EF382FFE25E1772900E080EC /* SignInContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInContainer.swift; sourceTree = "<group>"; };
 		EF38300725E18C3600E080EC /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		EF38300A25E19D6700E080EC /* POEVeticaVanta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = POEVeticaVanta.otf; sourceTree = "<group>"; };
-		EF38300D25E1AB4000E080EC /* AlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerExtension.swift; sourceTree = "<group>"; };
+		EF38300D25E1AB4000E080EC /* Extension+AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+AlertController.swift"; sourceTree = "<group>"; };
 		EF38300F25E1B23500E080EC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		EF38301225E1B37C00E080EC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EF3A490C25E16FBF00A1F160 /* AEONTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AEONTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,7 +52,6 @@
 		EF3A491825E16FC200A1F160 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF3A491B25E16FC200A1F160 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF3A491D25E16FC200A1F160 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EFEDC18725E3CA7B00B51A95 /* PaymentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsTableViewController.swift; sourceTree = "<group>"; };
 		EFEDC18925E44DC400B51A95 /* Extension+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIButton.swift"; sourceTree = "<group>"; };
 		F1AE665F91C04049BE212F57 /* Pods-AEONTestTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AEONTestTask.debug.xcconfig"; path = "Target Support Files/Pods-AEONTestTask/Pods-AEONTestTask.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,12 +91,11 @@
 				EF382FFB25E1772900E080EC /* SignInViewController.swift */,
 				EF33EC7D25E2DD7A0087B3D9 /* PaymentsViewController.swift */,
 				EF33EC7F25E2ED5E0087B3D9 /* PaymentsTableViewCell.swift */,
-				EFEDC18725E3CA7B00B51A95 /* PaymentsTableViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		EF38300525E1773100E080EC /* SignIn (VIPER) */ = {
+		EF38300525E1773100E080EC /* SignIn+Payments(VIPER) */ = {
 			isa = PBXGroup;
 			children = (
 				EF33EC7B25E2D88A0087B3D9 /* Views */,
@@ -108,7 +105,7 @@
 				EF382FFD25E1772900E080EC /* SignInInteractor.swift */,
 				EF382FFE25E1772900E080EC /* SignInContainer.swift */,
 			);
-			path = "SignIn (VIPER)";
+			path = "SignIn+Payments(VIPER)";
 			sourceTree = "<group>";
 		};
 		EF38300625E18BAE00E080EC /* Constants */ = {
@@ -130,7 +127,7 @@
 		EF38300C25E1AAF700E080EC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				EF38300D25E1AB4000E080EC /* AlertControllerExtension.swift */,
+				EF38300D25E1AB4000E080EC /* Extension+AlertController.swift */,
 				EF33EC8125E306BE0087B3D9 /* Extension+String.swift */,
 				EFEDC18925E44DC400B51A95 /* Extension+UIButton.swift */,
 			);
@@ -172,7 +169,7 @@
 				EF38300925E19D5700E080EC /* Fonts */,
 				EF38300625E18BAE00E080EC /* Constants */,
 				EF38300C25E1AAF700E080EC /* Extensions */,
-				EF38300525E1773100E080EC /* SignIn (VIPER) */,
+				EF38300525E1773100E080EC /* SignIn+Payments(VIPER) */,
 				EF38300F25E1B23500E080EC /* NetworkManager.swift */,
 				EF3A490F25E16FBF00A1F160 /* AppDelegate.swift */,
 				EF3A491A25E16FC200A1F160 /* LaunchScreen.storyboard */,
@@ -298,7 +295,7 @@
 			files = (
 				EF382FFF25E1772900E080EC /* SignInPresenter.swift in Sources */,
 				EF33EC7E25E2DD7A0087B3D9 /* PaymentsViewController.swift in Sources */,
-				EF38300E25E1AB4000E080EC /* AlertControllerExtension.swift in Sources */,
+				EF38300E25E1AB4000E080EC /* Extension+AlertController.swift in Sources */,
 				EF38301325E1B37C00E080EC /* User.swift in Sources */,
 				EF38300825E18C3600E080EC /* ColorPalette.swift in Sources */,
 				EF33EC8225E306BE0087B3D9 /* Extension+String.swift in Sources */,
@@ -309,7 +306,6 @@
 				EFEDC18A25E44DC400B51A95 /* Extension+UIButton.swift in Sources */,
 				EF38300425E1772900E080EC /* SignInContainer.swift in Sources */,
 				EF38300125E1772900E080EC /* SignInViewController.swift in Sources */,
-				EFEDC18825E3CA7B00B51A95 /* PaymentsTableViewController.swift in Sources */,
 				EF3A491025E16FBF00A1F160 /* AppDelegate.swift in Sources */,
 				EF38300325E1772900E080EC /* SignInInteractor.swift in Sources */,
 				EF38300225E1772900E080EC /* SignInProtocols.swift in Sources */,

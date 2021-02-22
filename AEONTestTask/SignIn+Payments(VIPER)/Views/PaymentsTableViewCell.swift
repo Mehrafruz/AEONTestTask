@@ -24,27 +24,36 @@ class PaymentsTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        //backgroundColor = .white
+        backgroundColor = .white
         setup()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-//
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
     
     func setup(){
-        setupLabel(label: descLabel, fontSize: 16)
-        setupLabel(label: amoutLabel, fontSize: 16)
-        setupLabel(label: currencyLabel, fontSize: 16)
-        setupLabel(label: createdLabel, fontSize: 16)
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        
+        setupLabel(label: descLabel, fontSize: 17)
+        setupLabel(label: amoutLabel, fontSize: 15)
+        setupLabel(label: currencyLabel, fontSize: 15)
+        setupLabel(label: createdLabel, fontSize: 15)
         
         [descLabel, amoutLabel, currencyLabel, createdLabel].forEach {
             contentView.addSubview($0)
+            ($0).numberOfLines = 2
+            ($0).lineBreakMode = .byClipping
         }
+        
+        [amoutLabel, currencyLabel].forEach {
+            ($0).textAlignment = .right
+        }
+        createdLabel.textAlignment = .left
         
         addConstraints()
     }
@@ -60,14 +69,14 @@ class PaymentsTableViewCell: UITableViewCell {
             ($0).translatesAutoresizingMaskIntoConstraints = false
         }
         
-        let width = UIScreen.main.bounds.width-10
+        let width = UIScreen.main.bounds.width-40
         let labelHeight: CGFloat = 20
-        let lineSpasing: CGFloat = 5
+        let lineSpasing: CGFloat = 2
         let leftAnchor: CGFloat = 20
         
         NSLayoutConstraint.activate([
             descLabel.widthAnchor.constraint(equalToConstant: width),
-            descLabel.heightAnchor.constraint(equalToConstant: labelHeight),
+            descLabel.heightAnchor.constraint(equalToConstant: 40),
             descLabel.topAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: lineSpasing),
             descLabel.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: leftAnchor)
         ])
@@ -96,9 +105,9 @@ class PaymentsTableViewCell: UITableViewCell {
     
     func configure(with model: PaymentsTableViewCellModel) {
         descLabel.text = model.desc
-        amoutLabel.text = model.amount
-        currencyLabel.text = model.currency
-        createdLabel.text = String(model.created)
+        amoutLabel.text = "Amount: " + model.amount
+        currencyLabel.text = "Currency: " + model.currency
+        createdLabel.text = "Created on " + String(model.created)
     }
     
 }

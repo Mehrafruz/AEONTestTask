@@ -25,12 +25,12 @@ enum Amount: Codable {
 
     init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
-        if let x = try? container.decode(Double.self) {
-            self = .double(x)
+        if let doubleValue = try? container.decode(Double.self) {
+            self = .double(doubleValue)
             return
         }
-        if let x = try? container.decode(String.self) {
-            self = .string(x)
+        if let stringValue = try? container.decode(String.self) {
+            self = .string(stringValue)
             return
         }
         throw DecodingError.typeMismatch(Amount.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for Amount"))
@@ -39,10 +39,10 @@ enum Amount: Codable {
     func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         switch self {
-        case .double(let x):
-            try container.encode(x)
-        case .string(let x):
-            try container.encode(x)
+        case .double(let doubleValue):
+            try container.encode(doubleValue)
+        case .string(let stringValue):
+            try container.encode(stringValue)
         }
     }
 }

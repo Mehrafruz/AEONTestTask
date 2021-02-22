@@ -17,7 +17,6 @@ extension SignInRouter: SignInRouterInput {
         let paymentsViewController = PaymentsViewController()
         paymentsViewController.payments = paiments
         viewController?.present(paymentsViewController, animated: true, completion: nil)
-        //viewController?.navigationController?.pushViewController(paymentsViewController, animated: true)
     }
     
     func show(_ error: Error) {
@@ -27,6 +26,6 @@ extension SignInRouter: SignInRouterInput {
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
         
-      //  viewController?.present(alertController, animated: true, completion: nil)
+        viewController?.present(alertController, animated: true, completion: nil)
     }
 }

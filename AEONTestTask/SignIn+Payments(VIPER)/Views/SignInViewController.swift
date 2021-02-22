@@ -34,6 +34,7 @@ final class SignInViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 900)
         
@@ -219,24 +220,23 @@ final class SignInViewController: UIViewController {
     
     @objc
     func didClickedSignInButton() {
-//        emailTextField.resignFirstResponder()
-//        passwordTextField.resignFirstResponder()
-//        
-//        let reason = "Fill in all the fields"
-//        guard let email = emailTextField.text, email != "" else{
-//            print ("emailTextField is empty")
-//            showAlert(reason: reason)
-//            return
-//        }
-//        guard let password = passwordTextField.text, password != "" else{
-//            print ("passwordTextField is empty")
-//            showAlert(reason: reason)
-//            return
-//        }
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
         
-        output.auth(email: "demo", pass: "12345")
+        let reason = "Fill in all the fields"
+        guard let email = emailTextField.text, email != "" else{
+            print ("emailTextField is empty")
+            showAlert(reason: reason)
+            return
+        }
+        guard let password = passwordTextField.text, password != "" else{
+            print ("passwordTextField is empty")
+            showAlert(reason: reason)
+            return
+        }
+        
         signInButton.pulsate()
-       // output.auth(email: email, pass: password)
+        output.auth(email: email, pass: password)
     }
     
 }

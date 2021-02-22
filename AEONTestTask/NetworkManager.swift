@@ -57,7 +57,6 @@ final class NetworkManager: NetworkManagerDescription {
                     let decoder = JSONDecoder()
                     do {
                         let user = try decoder.decode(User.self, from: data)
-                        print (user)
                        completion(.success(user))
                     } catch let error {
                         completion(.failure(error))
@@ -94,7 +93,6 @@ final class NetworkManager: NetworkManagerDescription {
                     let decoder = JSONDecoder()
                     do {
                         let user = try decoder.decode(Payments.self, from: data)
-                        print (user)
                         completion(.success(user))
                     } catch let error {
                         completion(.failure(error))

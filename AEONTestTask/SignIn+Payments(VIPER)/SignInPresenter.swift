@@ -37,13 +37,13 @@ extension SignInPresenter: SignInInteractorOutput {
 
     func didLoadToken(token: String) {
         interactor.loadPayments(token: token)
-           //грузим дальше
        }
+    
     func didLoadPayments(payments: Payments) {
         router.show(payments)
     }
     
     func didFail(with error: Error) {
-        print ("did fail when load some data")
+        router.show(error)
     }
 }

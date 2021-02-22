@@ -28,7 +28,6 @@ extension SignInInteractor: SignInInteractorInput {
                     print (user.response.token)
                     self?.output?.didLoadToken(token: user.response.token)
                 case .failure(let error):
-                    print (error)
                     self?.output?.didFail(with: error)
                 }
             }

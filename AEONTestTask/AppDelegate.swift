@@ -22,7 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = signInContainer.viewController
         window?.makeKeyAndVisible()
-        // Override point for customization after application launch.
         return true
     }
 
