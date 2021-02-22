@@ -1,0 +1,6 @@
+framework module Pods_AEONTestTask {
+  umbrella header "Pods-AEONTestTask-umbrella.h"
+
+  export *
+  module * { export * }
+}
